@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-06-20T10:20:32.693863" rpa="false" schemaversion="5">
+<suite id="s1" name="Yodep-Robot" source="C:\QAaut\projects\yodep-robot">
+<suite id="s1-s1" name="Tests" source="C:\QAaut\projects\yodep-robot\tests">
+<suite id="s1-s1-s1" name="Click" source="C:\QAaut\projects\yodep-robot\tests\click.robot">
+<test id="s1-s1-s1-t1" name="Deve abrir a tela principal" line="11">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=AndroidEmulator</arg>
+<arg>automationName=uiautomator2</arg>
+<arg>app=${EXECDIR}/app/yodapp-beta.apk</arg>
+<arg>udid=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-06-20T10:20:33.060340" elapsed="13.975705"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${START}</arg>
+<arg>5</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-06-20T10:20:47.037557" elapsed="5.717395"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2024-06-20T10:20:54.815886" level="INFO">xpath criteria: //*[contains(@text,"QAX")]</msg>
+<arg>${START}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2024-06-20T10:20:52.755981" elapsed="2.059905"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-06-20T10:20:54.818061" elapsed="0.666202"/>
+</kw>
+<status status="PASS" start="2024-06-20T10:20:33.059338" elapsed="22.424925"/>
+</test>
+<status status="PASS" start="2024-06-20T10:20:32.862765" elapsed="22.625568"/>
+</suite>
+<status status="PASS" start="2024-06-20T10:20:32.859449" elapsed="22.634693"/>
+</suite>
+<status status="PASS" start="2024-06-20T10:20:32.831658" elapsed="22.670168"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Yodep-Robot">Yodep-Robot</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Yodep-Robot.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Click">Yodep-Robot.Tests.Click</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
