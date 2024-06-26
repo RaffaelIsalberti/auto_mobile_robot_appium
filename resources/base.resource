@@ -28,6 +28,7 @@ Validar opção Dialogs
     ${info-caixa-dialogo}    Set Variable    xpath=//androidx.recyclerview.widget.RecyclerView[@resource-id="com.qaxperience.yodapp:id/rvSubMenu"]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout
     ${ok-caixa-dialogo}      Set Variable    xpath=//android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/dialogInfoOk"]
 
+
     Wait Until Element Is Visible    ${MENU-YODAPP}     5
     Click Element                    ${MENU-YODAPP} 
     Click Element                    ${caixa-dialogo} 
@@ -35,6 +36,7 @@ Validar opção Dialogs
 
     Wait Until Page Contains         Mestre Yoda   5
     Click Element                    ${ok-caixa-dialogo}
+
 
 Navegate to
     [Arguments]                      ${text-item}
@@ -47,14 +49,30 @@ Validar opção
     [Arguments]                      ${item}   ${checkpoint}
 
     Click Text                       ${item}
-    Wait Until Page Contains         ${checkpoint}
+    Wait Until Page Contains         ${checkpoint}   
     
 Validar opção_1 
     [Arguments]                      ${item}   ${checkpoint}
+    ${back-button}           Set Variable    xpath=//android.widget.ImageView[@resource-id="com.qaxperience.yodapp:id/ivBack"]
 
     Click Text                       ${item}
-    Wait Until Page Contains         ${checkpoint}
+    Wait Until Page Contains         ${checkpoint}   5
+    Click Element                    ${back-button}   
+
     
+Validar opção_2 
+    [Arguments]                      ${item}   ${checkpoint}
+ 
+    Click Text                       ${item}
+    Wait Until Page Contains         ${checkpoint}   5
+
+Validar opção_3 
+    [Arguments]                      ${checkpoint}
+    ${button-long}         Set Variable            id=com.qaxperience.yodapp:id/long_click
+    ${positions}           Get Element Location    ${button-long}  
+
+    Tap With Positions               1000    ${${positions}[x] , ${positions}[y]}
+    Wait Until Page Contains         ${checkpoint}
 
 Encerrar aplicação
     Close Application
